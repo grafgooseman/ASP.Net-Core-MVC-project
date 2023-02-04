@@ -1,0 +1,61 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+
+        body{
+            padding-left: 20%;
+            padding-right: 20%;
+            font-family: Arial;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            border: 1px solid black;
+            border-radius: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+            header h1 {
+                margin: 20px 30px;
+            }
+
+            header nav {
+                margin: 20px 30px;
+            }
+
+            header nav a{
+                margin: 0 13px;
+            }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>AG</h1>
+        <nav>
+            <a asp-controller="Home" asp-action="Index">Home</a>
+            <a asp-controller="Students" asp-action="Index">Students</a>
+        </nav>
+    </header>
+    <!--RenderBody and RenderSection - this is how I did it, and this is what I asked during the Friday's class-->
+    <div
+        @RenderBody()
+        @RenderSection("Scripts", false)
+    </div>
+
+</body>
+</html>
